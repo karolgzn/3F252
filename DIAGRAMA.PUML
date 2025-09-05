@@ -1,1 +1,59 @@
+@startuml DIAGRAMA
 
+class Juego 
+class Nivel
+class Escenario
+class Barra
+class Bola
+class Bloque
+class PowerUp
+class PowerDown
+class Puntaje
+class Vidas
+class Tiempo
+class MotorSonido
+class MotorGrafico
+class Sprite
+class Animacion
+class Control
+class Jugador
+class Colision
+class Vector2D
+class Configuracion
+class Partida
+class Ranking
+class Item
+class ObjetoFisico
+class EfectoVisual
+class EfectoSonoro
+class Menu
+class Boton
+class Texto
+class SistemaFisico
+
+Juego "1" --> "1..*" Nivel
+Nivel "1" --> "1" Escenario
+Nivel "1" --> "1..*" Bloque
+Escenario "1" --> "1" Barra
+Escenario "1" --> "1" Bola
+Escenario "1" --> "1..*" Sprite
+Barra "1" --> "0..*" PowerUp
+Barra "1" --> "0..*" PowerDown
+Bola "1" --> "0..*" Colision
+Jugador "1" --> "1" Puntaje
+Jugador "1" --> "1" Vidas
+Jugador "1" --> "1" Control
+Juego "1" --> "1" MotorGrafico
+Juego "1" --> "1" MotorSonido
+MotorGrafico "1" --> "0..*" Animacion
+Animacion "1" --> "1..*" Sprite
+MotorSonido "1" --> "0..*" EfectoSonoro
+MotorGrafico "1" --> "0..*" EfectoVisual
+Juego "1" --> "1" Configuracion
+Juego "1" --> "1..*" Partida
+Ranking "1" --> "1..*" Jugador
+Menu "1" --> "1..*" Boton
+Menu "1" --> "0..*" Texto
+SistemaFisico "1" --> "1..*" ObjetoFisico
+SistemaFisico "1" --> "1..*" Colision
+ObjetoFisico "1" --> "1" Vector2D

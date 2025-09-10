@@ -1,0 +1,16 @@
+@startuml iluminacion
+
+class Persona
+class Foco{
+    - EstadoFoco EstadoFoco
+    + Encender()
+    + Apagar()
+    + EstadoFoco LeerEstado()
+}
+class EstadoFoco
+
+Foco *-- EstadoFoco
+EstadoFoco --|> bool 
+Persona o-- Foco
+
+@enduml

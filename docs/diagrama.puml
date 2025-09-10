@@ -1,5 +1,4 @@
-@startuml DIAGRAMA
-
+@startuml diagrama
 class Juego 
 class Nivel
 class Escenario

@@ -87,7 +87,6 @@ public:
     void MoverAutos(int ancho_pantalla) {
         frame++;
 
-        // Mover auto1 y auto2 horizontalmente
         auto1.x = (2 + frame) % (ancho_pantalla - 6);
         auto2.x = (10 + frame * 2) % (ancho_pantalla - 6);
     }
@@ -95,16 +94,13 @@ public:
     void Dibujar(ftxui::Screen& screen, int ancho_pantalla) {
         gestor.dibujos.clear();
 
-        // Redibujar carretera, meta y edificios
         gestor.Agregar(carretera);
         for (auto& e : edificios) gestor.Agregar(e);
         gestor.Agregar(meta);
 
-        // Mover autos y volverlos a agregar
         MoverAutos(ancho_pantalla);
         gestor.Agregar(auto1);
         gestor.Agregar(auto2);
-
         gestor.DibujarTodos(screen);
     }
 };
